@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "Stock Management System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "stock-management-system-api"
+  },
+  "item": [
+    {
+      "name": "Get All Items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/items",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "items"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"buyerName\": \"John\",\n  \"materialName\": \"Cotton\",\n  \"materialType\": \"Shirt\",\n  \"sourceType\": \"SELLER\",\n  \"buyingPrice\": 100,\n  \"sellingPercentage\": 30,\n  \"sale\": true,\n  \"salePercentage\": 10,\n  \"stockClearing\": true,\n  \"stockClearingPrice\": 90\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/items",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "items"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/items/search?buyerName=John&sourceType=SELLER&sale=true&stockClearing=true",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "items",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "buyerName",
+              "value": "John"
+            },
+            {
+              "key": "sourceType",
+              "value": "SELLER"
+            },
+            {
+              "key": "sale",
+              "value": "true"
+            },
+            {
+              "key": "stockClearing",
+              "value": "true"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
